@@ -1,4 +1,4 @@
-# Template DotNet Labs
+# Clean Arch Mvc Labs
 
 ## Overview
 
