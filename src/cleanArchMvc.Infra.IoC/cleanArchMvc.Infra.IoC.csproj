@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\cleanArchMvc.Application\cleanArchMvc.Application.csproj" />
+    <ProjectReference Include="..\cleanArchMvc.Domain\cleanArchMvc.Domain.csproj" />
+    <ProjectReference Include="..\cleanArchMvc.Infra.Data\cleanArchMvc.Infra.Data.csproj" />
+  </ItemGroup>
+
 </Project>
