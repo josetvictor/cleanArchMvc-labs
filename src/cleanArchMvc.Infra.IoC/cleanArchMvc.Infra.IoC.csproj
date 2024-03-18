@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\cleanArchMvc.Application\cleanArchMvc.Application.csproj" />
     <ProjectReference Include="..\cleanArchMvc.Domain\cleanArchMvc.Domain.csproj" />
     <ProjectReference Include="..\cleanArchMvc.Infra.Data\cleanArchMvc.Infra.Data.csproj" />
