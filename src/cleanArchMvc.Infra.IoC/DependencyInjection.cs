@@ -1,12 +1,15 @@
 ﻿using cleanArchMvc.Application.Interfaces;
 using cleanArchMvc.Application.Mapping;
 using cleanArchMvc.Application.Services;
+using cleanArchMvc.Domain.Account;
 using cleanArchMvc.Domain.Interfaces;
 using cleanArchMvc.Infra.Data.Context;
+using cleanArchMvc.Infra.Data.Identity;
 using cleanArchMvc.Infra.Data.Repositories;
 
 using MediatR;
 
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,6 +34,16 @@ namespace cleanArchMvc.Infra.IoC
 
             var myHandlers = AppDomain.CurrentDomain.Load("cleanArchMvc.Application");
             services.AddMediatR(myHandlers);
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
+            services.ConfigureApplicationCookie(op =>
+                op.AccessDeniedPath = "/Account/Login");
+
+            services.AddScoped<IAuthenticate, AuthenticateServices>();
+            services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
 
             return services;
         }
