@@ -2,30 +2,35 @@
 
 ## Overview
 
-Learn time: This will template to quickly start new labs or PoCs.
+Learn time: Revisão dos conceitos de Arquitetura Limpa, implementação de testes unitarios, aplicação do padrão CQRS e MVC e a utilização do Identity para autenticação na camda de apresentação utilizando razor.
 
 ## Context 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+Esse projeto foi a aplicação pratica dos conceitos abordados no curso do José Macoratti de nome Clean Architecture Essencial - ASP .NET Core com C#. O foco do projeto é abordar os conceitos da arquitetura limpa, porém, também foi abordado a construção de uma camada para realizar testes de unidade da camada de ´Domain´, testando assim a criação dos objetos e seus metodos e validações respectivas.
+Após a construção da aplicação na abordagem da arquitetura limpa, foi apresentado ao padrão CQRS onde foi feito uma mudança na abordagem da entidade de Product para a utilização do padrão CQRS por fins didaticos, não era necessario a aplicação ao projeto devido a simples complexidade abordada.
+Por fim, na camada de apresentação foi aplicado ao Padrão de arquitetura MVC(Model, View, Controller) para criar as paginas de interação do usuario, onde foi construido na pasta de Views paginas Razor onde podemos realizar todas as funcionalidades CRUD(Create, Read, Update, Delete) construidas nas camadas de negocio da solução e por fim, foi implementado uma autenticação simples utilizando o Identity presando não ferir os conceitos da arquitetura limpa. 
 
 ## Key Features
 
- - .NET 7.0
+ - .NET 8.0
  - C#
  - XUnit
- - [Lorem Ipsum](https://loremipsum.io/)
+ - [Identity](https://www.nuget.org/profiles/identity)
+ - [AutoMapper](https://docs.automapper.org/en/stable/)
+ - [EntityFrameworkCore](https://learn.microsoft.com/pt-br/ef/core/)
+ - [MediatR](https://github.com/jbogard/MediatR)
+ - [Pattern CQRS](https://martinfowler.com/bliki/CQRS.html)
+ - Clean Architecture
+ - [Pattern MVC](https://www.geeksforgeeks.org/mvc-design-pattern/)
+ - [Razor Pages](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-8.0&tabs=visual-studio)
 
  
-## TODO
-
-- [ ] Lorem ipsum dolor sit amet
-
 ## Compatible IDEs
 
 Tested on:
 
 - VS Code
+- VisualStudio 22
 
 ## Useful commands
 
@@ -47,5 +52,5 @@ dotnet test
 
 ```shell
 # Run the application which will be listening on port `5099`.
-dotnet run --project <<PROJECT_PATH>>
+dotnet run --project ./src/CleanArchMvc.WebUI/CleanArch.Mvc.WebUI.csproj
 ```
